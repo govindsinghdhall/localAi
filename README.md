@@ -53,7 +53,7 @@ Edit `data/businesses.json`:
     "category": "Your category",
     "googleReviewUrl": "https://share.google/your-link",
     "placeId": "ChIJxxxxxxxx",
-    "googleWriteReviewUrl": ""
+    "googleWriteReviewUrl": "https://g.page/r/Cf1QSsTDGya5EBM/review"
     "logoInitials": "YB",
     "averageRating": 4.9,
     "totalReviews": 50

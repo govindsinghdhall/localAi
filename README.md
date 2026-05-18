@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Local AI
 
-## Getting Started
+AI-powered Google review collection for businesses. Customers select a star rating, get AI-generated review suggestions, edit their review, and are redirected to post on Google.
 
-First, run the development server:
+> **Note:** Google does not allow posting reviews via API. This app saves drafts locally and opens the official Google review page for the customer to paste and submit.
+
+## Tech Stack
+
+- Next.js 15+ (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- ShadCN-style UI components
+- Local JSON storage (`/data`)
+
+## Quick Start
 
 ```bash
+cd reviewboost-ai
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Demo business
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Roopya** — [http://localhost:3000/business/roopya](http://localhost:3000/business/roopya)
 
-## Learn More
+## Routes
 
-To learn more about Next.js, take a look at the following resources:
+| Route | Description |
+|-------|-------------|
+| `/` | Landing page |
+| `/business/[slug]` | Review collection page |
+| `/dashboard` | Analytics dashboard |
+| `POST /api/reviews` | Save review draft |
+| `POST /api/ai-suggestions` | Generate or rewrite reviews |
+| `GET /api/business/[slug]` | Get business details |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Add a business
 
-## Deploy on Vercel
+Edit `data/businesses.json`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```json
+{
+  "your-slug": {
+    "slug": "your-slug",
+    "name": "Your Business",
+    "description": "About your business",
+    "category": "Your category",
+    "googleReviewUrl": "https://share.google/your-link",
+    "placeId": "ChIJxxxxxxxx",
+    "googleWriteReviewUrl": ""
+    "logoInitials": "YB",
+    "averageRating": 4.9,
+    "totalReviews": 50
+  }
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Review page: `/business/your-slug`
+
+### Direct Google review link (required for “Post on Google”)
+
+Share links (`share.google/...`) do **not** open the review form. Use one of:
+
+**Option A — Place ID (recommended)**
+
+1. Open your business on [Google Maps](https://maps.google.com)
+2. Click **Write a review**
+3. Copy the URL from your browser — it looks like:
+   `https://search.google.com/local/writereview?placeid=ChIJ...`
+4. Put the `ChIJ...` value in `data/businesses.json` as `placeId`
+
+**Option B — Full write-review URL**
+
+Paste the full URL into `googleWriteReviewUrl` in `data/businesses.json`.
+
+### OpenAI (optional)
+
+Copy `.env.example` to `.env.local` and add your API key for smarter AI suggestions. Without it, the app uses built-in smart templates.
+
+## Features
+
+- ⭐ Interactive star rating & emoji sentiment
+- 🤖 AI review suggestions (5 tones)
+- ✍️ AI rewrite existing review
+- 📋 Copy review to clipboard
+- 🔗 Shareable review links & QR codes
+- 📊 Analytics dashboard
+- 📱 Mobile responsive dark UI
+
+## Scripts
+
+```bash
+npm run dev      # Development server
+npm run build    # Production build
+npm run start    # Start production server
+npm run lint     # ESLint
+```
+
+## License
+
+MIT

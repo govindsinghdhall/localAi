@@ -141,7 +141,7 @@ export function ReviewPageClient({ business }: ReviewPageClientProps) {
       return;
     }
 
-    const googleUrl = getGoogleReviewWriteUrl(business);
+    const googleUrl = getGoogleReviewWriteUrl(business).trim();
 
     if (!isDirectGoogleReviewUrl(googleUrl)) {
       toast.error(

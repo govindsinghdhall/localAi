@@ -21,6 +21,10 @@ export interface Business {
   logoInitials: string;
   averageRating: number;
   totalReviews: number;
+  address?: string;
+  phone?: string;
+  hours?: string;
+  mapsUrl?: string;
 }
 
 export interface Review {

@@ -19,12 +19,12 @@ export function Navbar() {
           <Link href="/dashboard" className="hover:text-white transition-colors">
             Analytics
           </Link>
-          <Link href="/business/roopya" className="hover:text-white transition-colors">
-            Demo
+          <Link href="/business/durga-property" className="hover:text-white transition-colors">
+            Durga Property
           </Link>
         </nav>
         <Button asChild size="sm">
-          <Link href="/business/roopya">Try Demo</Link>
+          <Link href="/business/durga-property">Leave a Review</Link>
         </Button>
       </div>
     </header>

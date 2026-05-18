@@ -6,11 +6,14 @@ import {
   Copy,
   ExternalLink,
   Loader2,
+  MapPin,
+  Phone,
   QrCode,
   RefreshCw,
   Share2,
   Sparkles,
   Wand2,
+  Clock,
 } from 'lucide-react';
 import { toast } from 'sonner';
 import type { Business, ReviewTone, SentimentEmoji } from '@/types';
@@ -182,7 +185,42 @@ export function ReviewPageClient({ business }: ReviewPageClientProps) {
         <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           {business.name}
         </h1>
-        <p className="mt-2 text-zinc-400">{business.description}</p>
+        <p className="mt-2 text-zinc-400">{business.category}</p>
+        <p className="mx-auto mt-2 max-w-xl text-sm text-zinc-500">{business.description}</p>
+        {(business.address || business.phone || business.hours) && (
+          <div className="mx-auto mt-4 max-w-lg space-y-2 text-left text-sm text-zinc-400">
+            {business.address && (
+              <p className="flex items-start gap-2">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-violet-400" />
+                <span>{business.address}</span>
+              </p>
+            )}
+            {business.phone && (
+              <p className="flex items-center gap-2">
+                <Phone className="h-4 w-4 shrink-0 text-violet-400" />
+                <a href={`tel:${business.phone.replace(/\s/g, '')}`} className="hover:text-white">
+                  {business.phone}
+                </a>
+              </p>
+            )}
+            {business.hours && (
+              <p className="flex items-center gap-2">
+                <Clock className="h-4 w-4 shrink-0 text-violet-400" />
+                <span>{business.hours}</span>
+              </p>
+            )}
+            {business.mapsUrl && (
+              <a
+                href={business.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-violet-300 hover:text-violet-200"
+              >
+                <ExternalLink className="h-3.5 w-3.5" /> Directions on Google Maps
+              </a>
+            )}
+          </div>
+        )}
         <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
           <Badge variant="success">
             ★ {business.averageRating} avg · {business.totalReviews} reviews

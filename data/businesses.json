@@ -4,11 +4,27 @@
     "name": "Roopya",
     "description": "Innovative technology and business solutions with a focus on exceptional client experience.",
     "category": "Technology & Business Services",
-    "googleReviewUrl": "https://share.google/7Uordq5T55tRi0ubf",
+    "googleReviewUrl": "https://g.page/r/Cf1QSsTDGya5EBM/review",
     "placeId": "",
-    "googleWriteReviewUrl": "",
+    "googleWriteReviewUrl": "https://g.page/r/Cf1QSsTDGya5EBM/review",
     "logoInitials": "R",
     "averageRating": 4.8,
     "totalReviews": 127
+  },
+  "durga-property": {
+    "slug": "durga-property",
+    "name": "Durga Property",
+    "description": "Trusted real estate consultant in Gurgaon — residential, commercial, and investment properties across Haryana.",
+    "category": "Real Estate Consultant",
+    "googleReviewUrl": "",
+    "placeId": "",
+    "googleWriteReviewUrl": "",
+    "logoInitials": "DP",
+    "averageRating": 4.4,
+    "totalReviews": 77,
+    "address": "OFFICE 101 R NEW COLONY NEAR SECTOR - 7, opp. MLA GABA, Urban Estate, KOTHI, Gurugram, Haryana 122001",
+    "phone": "098100 78510",
+    "hours": "Opens 8 am Tue",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Durga+Property+Sector+7+Gurugram+Haryana+122001"
   }
 }

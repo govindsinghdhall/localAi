@@ -7,7 +7,10 @@ export function Footer() {
         <p>© {new Date().getFullYear()} Local AI. All rights reserved.</p>
         <div className="flex gap-6">
           <Link href="/business/roopya" className="hover:text-zinc-300">
-            Roopya Demo
+            Roopya
+          </Link>
+          <Link href="/business/durga-property" className="hover:text-zinc-300">
+            Durga Property
           </Link>
           <Link href="/dashboard" className="hover:text-zinc-300">
             Dashboard

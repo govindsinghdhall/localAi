@@ -49,8 +49,8 @@ export default async function DashboardPage() {
       <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="mb-10">
           <Badge className="mb-3">Analytics</Badge>
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">Dashboard</h1>
-          <p className="mt-2 text-zinc-400">
+          <h1 className="text-3xl font-bold text-neutral-900 sm:text-4xl">Dashboard</h1>
+          <p className="mt-2 text-neutral-500">
             Track review drafts saved before customers post on Google
           </p>
         </div>
@@ -59,12 +59,12 @@ export default async function DashboardPage() {
           {stats.map((stat) => (
             <Card key={stat.label}>
               <CardContent className="p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-violet-500/15">
-                  <stat.icon className="h-5 w-5 text-violet-300" />
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100">
+                  <stat.icon className="h-5 w-5 text-neutral-600" />
                 </div>
-                <p className="text-2xl font-bold text-white">{stat.value}</p>
-                <p className="text-sm text-zinc-400">{stat.label}</p>
-                <p className="mt-1 text-xs text-zinc-500">{stat.change}</p>
+                <p className="text-2xl font-bold text-neutral-900">{stat.value}</p>
+                <p className="text-sm text-neutral-500">{stat.label}</p>
+                <p className="mt-1 text-xs text-neutral-400">{stat.change}</p>
               </CardContent>
             </Card>
           ))}
@@ -83,14 +83,14 @@ export default async function DashboardPage() {
                     : 0;
                 return (
                   <div key={star} className="flex items-center gap-3">
-                    <span className="w-8 text-sm text-zinc-400">{star}★</span>
-                    <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/10">
+                    <span className="w-8 text-sm text-neutral-500">{star}★</span>
+                    <div className="h-2 flex-1 overflow-hidden rounded-full bg-neutral-200">
                       <div
-                        className="h-full rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 transition-all"
+                        className="h-full rounded-full bg-neutral-800 transition-all"
                         style={{ width: `${pct}%` }}
                       />
                     </div>
-                    <span className="w-8 text-right text-sm text-zinc-400">{count}</span>
+                    <span className="w-8 text-right text-sm text-neutral-500">{count}</span>
                   </div>
                 );
               })}
@@ -106,18 +106,18 @@ export default async function DashboardPage() {
                 <Link
                   key={b.slug}
                   href={`/business/${b.slug}`}
-                  className="flex items-center justify-between rounded-xl border border-white/10 bg-black/20 p-4 transition-colors hover:border-violet-500/30"
+                  className="flex items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-4 transition-colors hover:border-neutral-300 hover:bg-white"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 font-bold text-white">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-900 font-bold text-white">
                       {b.logoInitials}
                     </div>
                     <div>
-                      <p className="font-medium text-white">{b.name}</p>
-                      <p className="text-xs text-zinc-500">/{b.slug}</p>
+                      <p className="font-medium text-neutral-900">{b.name}</p>
+                      <p className="text-xs text-neutral-400">/{b.slug}</p>
                     </div>
                   </div>
-                  <span className="text-sm text-amber-400">★ {b.averageRating}</span>
+                  <span className="text-sm text-amber-500">★ {b.averageRating}</span>
                 </Link>
               ))}
             </CardContent>
@@ -133,13 +133,13 @@ export default async function DashboardPage() {
               {analytics.recent.map((r) => (
                 <div
                   key={r.id}
-                  className="rounded-xl border border-white/10 bg-black/20 p-4"
+                  className="rounded-lg border border-neutral-200 bg-neutral-50 p-4"
                 >
                   <div className="mb-2 flex items-center justify-between">
-                    <span className="text-sm font-medium text-white">{r.businessSlug}</span>
-                    <span className="text-amber-400">{'★'.repeat(r.rating)}</span>
+                    <span className="text-sm font-medium text-neutral-900">{r.businessSlug}</span>
+                    <span className="text-amber-500">{'★'.repeat(r.rating)}</span>
                   </div>
-                  <p className="line-clamp-2 text-sm text-zinc-400">{r.text}</p>
+                  <p className="line-clamp-2 text-sm text-neutral-500">{r.text}</p>
                 </div>
               ))}
             </CardContent>

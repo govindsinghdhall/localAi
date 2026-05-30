@@ -33,8 +33,8 @@ export function StarRating({ value, onChange, size = 'lg' }: StarRatingProps) {
               className={cn(
                 iconSize,
                 filled
-                  ? 'fill-amber-400 text-amber-400 drop-shadow-[0_0_12px_rgba(251,191,36,0.5)]'
-                  : 'text-zinc-600 hover:text-zinc-400',
+                  ? 'fill-amber-400 text-amber-400'
+                  : 'text-neutral-300 hover:text-neutral-400',
               )}
             />
           </motion.button>

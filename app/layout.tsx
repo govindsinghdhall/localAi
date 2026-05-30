@@ -26,18 +26,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased`}
       >
         <GradientBackground />
         {children}
         <Toaster
-          theme="dark"
+          theme="light"
           position="top-center"
           toastOptions={{
             classNames: {
-              toast: 'border border-white/10 bg-zinc-900 text-white',
+              toast: 'border border-neutral-200 bg-white text-neutral-900 shadow-md',
             },
           }}
         />

@@ -38,11 +38,11 @@ export function Features() {
   return (
     <section id="features" className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
       <div className="mb-16 text-center">
-        <h2 className="text-3xl font-bold text-white sm:text-4xl">
+        <h2 className="text-3xl font-bold text-neutral-900 sm:text-4xl">
           Everything you need to boost reviews
         </h2>
-        <p className="mt-4 text-zinc-400">
-          Premium tools designed for modern businesses
+        <p className="mt-4 text-neutral-500">
+          Simple tools designed for local businesses
         </p>
       </div>
 
@@ -54,14 +54,14 @@ export function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            whileHover={{ y: -4 }}
-            className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-shadow hover:border-violet-500/30 hover:shadow-xl hover:shadow-violet-500/10"
+            whileHover={{ y: -2 }}
+            className="group rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-shadow hover:border-neutral-300 hover:shadow-md"
           >
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/15 text-violet-300 transition-colors group-hover:bg-violet-500/25">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-neutral-100 text-neutral-700 transition-colors group-hover:bg-neutral-200">
               <feature.icon className="h-6 w-6" />
             </div>
-            <h3 className="mb-2 text-lg font-semibold text-white">{feature.title}</h3>
-            <p className="text-sm leading-relaxed text-zinc-400">{feature.description}</p>
+            <h3 className="mb-2 text-lg font-semibold text-neutral-900">{feature.title}</h3>
+            <p className="text-sm leading-relaxed text-neutral-500">{feature.description}</p>
           </motion.div>
         ))}
       </div>

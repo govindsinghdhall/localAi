@@ -28,14 +28,14 @@ export function SentimentSelector({ selected, onSelect }: SentimentSelectorProps
           whileTap={{ scale: 0.97 }}
           onClick={() => onSelect(emoji, rating)}
           className={cn(
-            'flex flex-col items-center gap-1 rounded-2xl border px-3 py-2 transition-all',
+            'flex flex-col items-center gap-1 rounded-xl border px-3 py-2 transition-all',
             selected === emoji
-              ? 'border-violet-500/50 bg-violet-500/20 shadow-lg shadow-violet-500/20'
-              : 'border-white/10 bg-white/5 hover:border-white/20',
+              ? 'border-neutral-900 bg-neutral-100 shadow-sm'
+              : 'border-neutral-200 bg-white hover:border-neutral-300 hover:bg-neutral-50',
           )}
         >
           <span className="text-2xl">{emoji}</span>
-          <span className="text-xs text-zinc-400">{label}</span>
+          <span className="text-xs text-neutral-500">{label}</span>
         </motion.button>
       ))}
     </div>

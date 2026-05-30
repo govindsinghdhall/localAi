@@ -179,33 +179,33 @@ export function ReviewPageClient({ business }: ReviewPageClientProps) {
         animate={{ opacity: 1, y: 0 }}
         className="mb-8 text-center"
       >
-        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-600 text-2xl font-bold text-white shadow-xl shadow-violet-500/30">
+        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-neutral-900 text-2xl font-bold text-white">
           {business.logoInitials}
         </div>
-        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
           {business.name}
         </h1>
-        <p className="mt-2 text-zinc-400">{business.category}</p>
-        <p className="mx-auto mt-2 max-w-xl text-sm text-zinc-500">{business.description}</p>
+        <p className="mt-2 text-neutral-500">{business.category}</p>
+        <p className="mx-auto mt-2 max-w-xl text-sm text-neutral-400">{business.description}</p>
         {(business.address || business.phone || business.hours) && (
-          <div className="mx-auto mt-4 max-w-lg space-y-2 text-left text-sm text-zinc-400">
+          <div className="mx-auto mt-4 max-w-lg space-y-2 text-left text-sm text-neutral-500">
             {business.address && (
               <p className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-violet-400" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-neutral-400" />
                 <span>{business.address}</span>
               </p>
             )}
             {business.phone && (
               <p className="flex items-center gap-2">
-                <Phone className="h-4 w-4 shrink-0 text-violet-400" />
-                <a href={`tel:${business.phone.replace(/\s/g, '')}`} className="hover:text-white">
+                <Phone className="h-4 w-4 shrink-0 text-neutral-400" />
+                <a href={`tel:${business.phone.replace(/\s/g, '')}`} className="hover:text-neutral-900">
                   {business.phone}
                 </a>
               </p>
             )}
             {business.hours && (
               <p className="flex items-center gap-2">
-                <Clock className="h-4 w-4 shrink-0 text-violet-400" />
+                <Clock className="h-4 w-4 shrink-0 text-neutral-400" />
                 <span>{business.hours}</span>
               </p>
             )}
@@ -214,7 +214,7 @@ export function ReviewPageClient({ business }: ReviewPageClientProps) {
                 href={business.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-violet-300 hover:text-violet-200"
+                className="inline-flex items-center gap-1 text-neutral-600 underline-offset-2 hover:text-neutral-900 hover:underline"
               >
                 <ExternalLink className="h-3.5 w-3.5" /> Directions on Google Maps
               </a>
@@ -253,7 +253,7 @@ export function ReviewPageClient({ business }: ReviewPageClientProps) {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Sparkles className="h-5 w-5 text-violet-400" />
+              <Sparkles className="h-5 w-5 text-neutral-600" />
               AI Review Assistant
             </CardTitle>
             <CardDescription>
@@ -283,7 +283,7 @@ export function ReviewPageClient({ business }: ReviewPageClientProps) {
                   value={keywords}
                   onChange={(e) => setKeywords(e.target.value)}
                   placeholder="e.g. fast service, friendly staff"
-                  className="flex h-11 w-full rounded-xl border border-white/10 bg-black/30 px-4 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-violet-400/40"
+                  className="flex h-11 w-full rounded-lg border border-neutral-200 bg-white px-4 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-1"
                 />
               </div>
             </div>
@@ -302,7 +302,7 @@ export function ReviewPageClient({ business }: ReviewPageClientProps) {
             </Button>
 
             {aiSource && (
-              <p className="text-center text-xs text-zinc-500">
+              <p className="text-center text-xs text-neutral-400">
                 Powered by {aiSource === 'openai' ? 'OpenAI' : 'smart templates'}
               </p>
             )}
@@ -321,9 +321,9 @@ export function ReviewPageClient({ business }: ReviewPageClientProps) {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.08 }}
-                      className="group rounded-xl border border-white/10 bg-black/20 p-4 hover:border-violet-500/30"
+                      className="group rounded-lg border border-neutral-200 bg-neutral-50 p-4 hover:border-neutral-300 hover:bg-white"
                     >
-                      <p className="text-sm leading-relaxed text-zinc-200">{s}</p>
+                      <p className="text-sm leading-relaxed text-neutral-700">{s}</p>
                       <div className="mt-3 flex gap-2">
                         <Button size="sm" variant="secondary" onClick={() => applySuggestion(s)}>
                           Use this
@@ -361,14 +361,14 @@ export function ReviewPageClient({ business }: ReviewPageClientProps) {
               placeholder="Write your review here or use an AI suggestion above..."
               className="min-h-[160px]"
             />
-            <div className="flex items-center justify-between text-xs text-zinc-500">
+            <div className="flex items-center justify-between text-xs text-neutral-400">
               <span>
                 {charCount} / {MAX_REVIEW_LENGTH} characters
               </span>
-              <div className="h-1.5 w-24 overflow-hidden rounded-full bg-white/10">
+              <div className="h-1.5 w-24 overflow-hidden rounded-full bg-neutral-200">
                 <div
                   className={`h-full rounded-full transition-all ${
-                    charPercent > 90 ? 'bg-amber-500' : 'bg-violet-500'
+                    charPercent > 90 ? 'bg-amber-500' : 'bg-neutral-700'
                   }`}
                   style={{ width: `${charPercent}%` }}
                 />
@@ -410,7 +410,7 @@ export function ReviewPageClient({ business }: ReviewPageClientProps) {
               )}
               Post Review on Google
             </Button>
-            <p className="text-center text-xs text-zinc-500">
+            <p className="text-center text-xs text-neutral-400">
               Reviews cannot be posted automatically. You will paste your review on Google.
             </p>
           </CardContent>
